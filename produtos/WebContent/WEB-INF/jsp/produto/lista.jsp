@@ -31,13 +31,13 @@
 			<td width="20%">Remover?</td>
 		</tr>
 
-		<c:forEach var="p" items="${pprodutoList}" varStatus="st">
+		<c:forEach var="p" items="${produtoList}" varStatus="st">
 		${st.count}
 			<tr id="produto{$p.Id}">
 				<td>${p.Nome}</td>
 				<td>${p.Preco}</td>
 				<td>${p.Descricao}</td>
-				<td>${p.DataInicioVenda}</td>
+				<td>${p.DataInicioVenda.dataTime}</td>
 				<c:if test="${p.isUsado is true}" var="p1">
 					<c:out value="Sim"></c:out>
 				</c:if>
