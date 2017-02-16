@@ -31,7 +31,8 @@
 			<td width="20%">Remover?</td>
 		</tr>
 
-		<c:forEach var="p" items="${pprodutoList}">
+		<c:forEach var="p" items="${pprodutoList}" varStatus="st">
+		${st.count}
 			<tr id="produto{$p.Id}">
 				<td>${p.Nome}</td>
 				<td>${p.Preco}</td>
