@@ -31,20 +31,19 @@
 			<td width="20%">Remover?</td>
 		</tr>
 
-		<c:forEach var="p" items="${produtoList}" varStatus="st">
-		${st.count}
+		<c:forEach var="p" items="${produtoList}">
 			<tr id="produto{$p.Id}">
-				<td>${p.Nome}</td>
+				<td>${p.nome}</td>
 				<td>
-					<fmt:formatNumber value="${p.Preco}" type="currency" />
+					<fmt:formatNumber value="${p.preco}" type="currency" />
 				</td>
-				<td>${p.Descricao}</td>
-				<td><fmt:formatDate pattern="EEEE/MMMM/yyyy"
-						value="${p.DataInicioVenda.time}" />
+				<td>${p.descricao}</td>
+				<td><fmt:formatDate pattern="EEEE, dd 'de' MMMM 'de' yyyy"
+						value="${p.dataInicioVenda.time}" />
 				</td>
 
 				<c:choose>
-					<c:when test="${p.isUsado}">
+					<c:when test="${p.usado}">
 						<td>Sim</td>
 					</c:when>
 					<c:otherwise>
@@ -52,7 +51,7 @@
 					</c:otherwise>
 				</c:choose>
 
-				<td><a href="#" onclick="return removeProduto(${p.Id)">Remover</a></td>
+				<td><a href="#" onclick="return removeProduto(${p.id}">Remover</a></td>
 			</tr>
 		</c:forEach>
 	</table>
