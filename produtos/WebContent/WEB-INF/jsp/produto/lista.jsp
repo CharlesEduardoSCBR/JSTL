@@ -37,7 +37,9 @@
 				<td>${p.Nome}</td>
 				<td>${p.Preco}</td>
 				<td>${p.Descricao}</td>
-				<td>${p.DataInicioVenda.dataTime}</td>
+				<td><fmt:formatDate pattern="dd/MM/yyyy"
+						value="${p.DataInicioVenda.time}" />
+				</td>
 
 				<c:choose>
 					<c:when test="${p.isUsado}">
@@ -52,6 +54,7 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="<c:url value='/produto/formulario'></c:url>">Adicionar um produto</a>
+	<a href="<c:url value='/produto/formulario'></c:url>">Adicionar um
+		produto</a>
 </body>
 </html>
