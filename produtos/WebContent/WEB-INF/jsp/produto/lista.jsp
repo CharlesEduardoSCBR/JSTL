@@ -38,13 +38,15 @@
 				<td>${p.Preco}</td>
 				<td>${p.Descricao}</td>
 				<td>${p.DataInicioVenda.dataTime}</td>
-				<c:if test="${p.isUsado is true}" var="p1">
-					<c:out value="Sim"></c:out>
-				</c:if>
 
-				<c:if test="${p.isUsado is false}" var="p1">
-					<c:out value="Não"></c:out>
-				</c:if>
+				<c:choose>
+					<c:when test="${p.isUsado}">
+						<td>Sim</td>
+					</c:when>
+					<c:otherwise>
+						<td>Não</td>
+					</c:otherwise>
+				</c:choose>
 
 				<td><a href="#" onclick="return removeProduto(${p.Id)">Remover</a></td>
 			</tr>
