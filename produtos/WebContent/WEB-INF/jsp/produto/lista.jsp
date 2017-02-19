@@ -39,7 +39,7 @@
 					<fmt:formatNumber value="${p.Preco}" type="currency" />
 				</td>
 				<td>${p.Descricao}</td>
-				<td><fmt:formatDate pattern="dd/MM/yyyy"
+				<td><fmt:formatDate pattern="EEEE/MMMM/yyyy"
 						value="${p.DataInicioVenda.time}" />
 				</td>
 
